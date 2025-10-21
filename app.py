@@ -1,5 +1,6 @@
 import streamlit as st
 from transformers import pipeline
+from googletrans import Translator
 
 st.set_page_config(page_title="日本語対応 文章分析", layout="centered")
 
