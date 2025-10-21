@@ -9,7 +9,7 @@ st.title("日本語テキスト分析デモ")
 task = st.sidebar.selectbox("機能を選択してください", ["要約", "質問応答"])
 
 # 要約
-elif task == "要約":
+if task == "要約":
     st.subheader("要約")
     text = st.text_area("要約したい文章を入力してください：")
 
