@@ -7,8 +7,8 @@ st.title("日本語対応 文章分析")
 st.write("日本語で入力できます")
 
 # 翻訳モデル（日本語⇄英語）
-to_en = pipeline("translation", model="Helsinki-NLP/opus-mt-ja-en")
-to_ja = pipeline("translation", model="Helsinki-NLP/opus-mt-en-jap")
+to_en = pipeline("translation", model="staka/fugumt-ja-en")  
+to_ja = pipeline("translation", model="staka/fugumt-en-ja")
 
 task = st.sidebar.selectbox("機能を選択してください", ["感情分析", "要約", "質問応答", "英訳テスト"])
 
