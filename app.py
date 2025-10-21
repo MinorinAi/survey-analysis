@@ -6,20 +6,19 @@ st.set_page_config(page_title="日本語対応 文章分析", layout="centered")
 st.title("日本語対応　文章分析")
 st.write("日本語で入力してください")
 
-# -------------------------
-# 翻訳関数（必要時のみモデルをロード）
-# -------------------------
-@st.cache_resource
-def translate_to_en(text):
-    """日本語→英語翻訳"""
-    translator = pipeline("translation", model="staka/fugumt-ja-en")
-    return translator(text)[0]["translation_text"]
 
-@st.cache_resource
+# -------------------------
+# Google翻訳
+# -------------------------
+translator = Translator()
+
+def translate_to_en(text):
+    """日本語→英語"""
+    return translator.translate(text, src="ja", dest="en").text
+
 def translate_to_ja(text):
-    """英語→日本語翻訳"""
-    translator = pipeline("translation", model="staka/fugumt-en-ja")
-    return translator(text)[0]["translation_text"]
+    """英語→日本語"""
+    return translator.translate(text, src="en", dest="ja").text
 
 # -------------------------
 # Streamlit UI設定
