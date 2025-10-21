@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 
-st.set_page_config(page_title="日本語LLMデモ", page_icon="🇯🇵", layout="centered")
+st.set_page_config(page_title="日本語LLMデモ", layout="centered")
 
 st.title("日本語テキスト分析デモ")
 
