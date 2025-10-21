@@ -6,18 +6,7 @@ st.set_page_config(page_title="日本語LLMデモ", layout="centered")
 st.title("日本語テキスト分析デモ")
 
 # Sidebar
-task = st.sidebar.selectbox("機能を選択してください", ["感情分析", "要約", "質問応答"])
-
-# 感情分析
-if task == "感情分析":
-    st.subheader("感情分析")
-    text = st.text_area("テキストを入力してください：")
-    if st.button("分析する"):
-        model = pipeline("sentiment-analysis", model="daigo/bert-base-japanese-sentiment")
-        result = model(text)[0]
-        label = result["label"]
-        score = result["score"]
-        st.success(f"感情：{label}（確信度: {score:.3f}）")
+task = st.sidebar.selectbox("機能を選択してください", ["要約", "質問応答"])
 
 # 要約
 elif task == "要約":
